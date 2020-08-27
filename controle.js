@@ -1,42 +1,6 @@
 var icones = [document.getElementById("wpp"), document.getElementById("instagram"), document.getElementById("github"), document.getElementById("linkedn")]
 var logo = [document.getElementById("wpplogo"), document.getElementById("instagramlogo"), document.getElementById("githublogo"), document.getElementById("linkedinlogo")];
 var classe = document.getElementById("oculos");
-class Slide {
-    constructor(slide, cx) {
-        this.slide = document.querySelector(slide);
-        this.cx = document.querySelector(cx);
-    }
-
-    onStart(event) {
-        event.preventDefault();
-        console.log('mousedown');
-        this.cx.addEventListener('mousemove', this.onMove);
-    }
-    onMove(event) {
-        console.log('moveu');
-    }
-    onEnd(event) {
-        console.log('acabou');
-        this.cx.addEventListener('mousemove', this.onMove);
-    }
-    addSlideEvents() {
-        this.cx.addEventListener('mousedown', this.onStart)
-        this.cx.addEventListener('mouseup', this.onEnd)
-    }
-    bindEvents() {
-        this.onStart = this.onStart.bind(this);
-        this.onMove = this.onMove.bind(this);
-        this.onEnd = this.onEnd.bind(this);
-    }
-    init() {
-        this.addSlideEvents();
-        return this;
-    }
-};
-const slide = new Slide('.slide', '.slide ul li');
-slide.init();
-
-console.log(slide);
 
 function hover() {
     icones[0].addEventListener('mouseover', function() {
